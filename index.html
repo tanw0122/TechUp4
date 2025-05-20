@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Aid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Car Aid</h1>
+  <p>Diagnose your car issue and find a mechanic nearby.</p>
+
+  <!-- Car Problem Selection -->
+  <div class="section">
+    <h2>Step 1: Diagnose Your Car Problem</h2>
+    <select id="problemSelect" onchange="showProblemDescription()">
+      <option value="">--Select a car issue--</option>
+      <option value="engine">Engine won't start</option>
+      <option value="brakes">Brake issues</option>
+      <option value="battery">Battery problem</option>
+    </select>
+    <div id="problemDescription"></div>
+  </div>
+
+  <!-- Filter Workshops -->
+  <div class="section">
+    <h2>Step 2: Find a Mechanic</h2>
+    <label>Location:
+      <select id="locationFilter">
+        <option value="">All</option>
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="central">Central</option>
+      </select>
+    </label>
+    <label>Rating:
+      <select id="ratingFilter">
+        <option value="">Any</option>
+        <option value="4">4+ stars</option>
+        <option value="3">3+ stars</option>
+      </select>
+    </label>
+    <label>
+      <input type="checkbox" id="showPrice"> Show only workshops with listed prices
+    </label>
+    <button onclick="filterWorkshops()">Search</button>
+  </div>
+
+  <!-- Workshop Results -->
+  <div class="section">
+    <h2>Available Workshops</h2>
+    <div id="workshopList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
